@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 		<title>學生套房出租</title>
 		<style>
 			*{
@@ -139,12 +139,26 @@
 				text-align: center;
 				font-size: 20px;
 			}
-			
+
+			.navFixed {
+				z-index: 10;          
+				position: fixed;      
+				top: 0;
+				left: 0;
+				margin-top: 0;
+				min-width: 100%;
+				opacity: 0.94;
+				transition: opacity .5s ease-out;   
+			}
+
 		</style>
+
+		
+		
 	</head>
 
 	<body>
-		<header class="home">
+		<header class="top">
 			<h1>逢甲橋光學生套房出租</h1>
 		</header>
 		
@@ -152,7 +166,7 @@
 			<div>
 				<ul>
 					<li>
-						<a href="#home">首頁</a>
+						<a href="#top">首頁</a>
 					</li>
 					<li>
 						<a href="#info">套房資訊</a>
@@ -192,43 +206,55 @@
 			</div>
 
 			<div class="introImage">
-				<img src="P_20180413_145455.jpg" style="width:40%; height:40%;">
-				<img src="P_20180413_145313.jpg" style="width:25%; height:25%;">
+				<img src="Image\outside\P_20180413_145455.jpg" style="width:40%; height:40%;">
+				<img src="Image\outside\P_20180413_145313.jpg" style="width:25%; height:25%;">
 			</div>
 
 			<!--套房環境-->
 			<div class="roomImage">
 				<div>
 					<h2 id="roomEnv">房間環境</h2>
-					<img src="3B-1.jpg" style="width:40%; height:40%;">
-					<img src="3B-3.jpg" style="width:40%; height:40%;">
+					<img src="Image\room\3B-1.jpg" style="width:40%; height:40%;">
+					<img src="Image\room\3B-3.jpg" style="width:40%; height:40%;">
 				</div>
 				<div>
-					<img src="5A-1.jpg" style="width:40%; height:40%;">
-					<img src="5A-2.jpg" style="width:25%; height:25%;">
+					<img src="Image\room\5A-1.jpg" style="width:40%; height:40%;">
+					<img src="Image\room\5A-2.jpg" style="width:25%; height:25%;">
 				</div>
 				<div>
 					<h2 id="pubEnv">公用設備</h2>
-					<img src="P_20180413_144403.jpg" style="width:30%; height:30%;">
-					<img src="P_20180413_144538.jpg" style="width:30%; height:30%;">
+					<img src="Image\equipment\P_20180413_144403.jpg" style="width:30%; height:30%;">
+					<img src="Image\equipment\P_20180413_144538.jpg" style="width:30%; height:30%;">
 				</div>
 				<div>
 					<h2 id="park">機車停車場</h2>
-					<img src="P_20180413_145423.jpg" style="width:50%; height:50%;">
+					<img src="Image\equipment\P_20180413_145423.jpg" style="width:50%; height:50%;">
 				</div>
 			</div>
 			
 			<div class="welcome">
 				<p>~~歡迎來電洽訊~~</p>
 			</div>
+
+			
 		</main>
-
-
 
 		<footer>
 			<p class="createrInfo">copyright@created by eighteen 2022</p>
 		</footer>
 	
+		<script>
+			$(function() {
+			  $(window).scroll(function() {
+				if ($(this).scrollTop() > 100)  {          /* 要滑動到選單的距離 */
+				   $('.menu').addClass('navFixed');   /* 幫選單加上固定效果 */
+				} else {
+				  $('.menu').removeClass('navFixed'); /* 移除選單固定效果 */
+				}
+			  });
+			});
+		</script> 
+
 	</body>
 
 </html>
