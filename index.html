@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
 		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 		<title>學生套房出租</title>
 		<style>
@@ -18,7 +22,7 @@
 			h1 {
 				color: black;
 				font-size: 45px;
-				font-weight : 700; /*700: max*/
+				font-weight: bolder;
 				padding: 1%;
 			}
 			h2{
@@ -26,19 +30,19 @@
 				font-size: 35px;
 			}
 			img:hover{
-				transform: scale(1.1);
+				transform: scale(1.05);
 			}
 	
-
+			/*
 			.menu{
 				background-color: rgb(0,255,255);
-				box-sizing: border-box; /*border-box: 可調整padding的四周*/
+				box-sizing: border-box; 
 				padding: 3px;
-				width: 100%; /*寬度滿版*/
+				width: 100%; 
 			}
 			.menu ul li{
 				font-size: 25px;
-				padding: 8px 8px 4px 10px; /*top right bottom left*/
+				padding: 8px 8px 4px 10px;
  				list-style-type: none;
 				display: inline;
 			}
@@ -51,9 +55,8 @@
 				background-color: rgb(127, 255, 212);		
 			}
 			
-			
 			.dropdown-content {
-				z-index: 2; /*覆蓋在跑馬燈之上*/
+				z-index: 2;
 				display: none;
 				position: absolute;
 				background-color: rgb(0,255,255);
@@ -72,6 +75,17 @@
 			.roomEnv:hover .dropdown-content {
 				display: block;
 			}
+			*/
+			.dropdown-menu li:hover .sub-menu {
+				visibility: visible;
+			}
+			.dropdown:hover .dropdown-menu {
+				display: block;
+			}
+			.navbar-nav a {
+				font-size: 2vmin;
+			}
+
 
 			.marquee{
 				font-size: 40px;
@@ -79,7 +93,6 @@
 				margin: 2%;
 				overflow: hidden;
 			}
-
 			.text{
 				position: relative;
 				transform: translateX(10%);
@@ -118,12 +131,21 @@
 
 			.infomation{
 				margin: 1%;
+				animation: runTop 2s ease;
+			}
+			@keyframes runTop {
+				0%{
+					transform:translateY(40%);
+				}
+				100%{
+					transform:translateY(0%);
+				}
 			}
 			.infomation ul{
 				text-align-last: left;
 				width: 48%;
 				margin:auto;
-				font-size: 3.5vmin; /*28px*/
+				font-size: 3.4vmin; /*28px*/
 			}
 
 			.welcome p{
@@ -131,17 +153,18 @@
 				text-align: center;
 				font-size: 12vmin;
 				font-weight: 600;
-				animation: color-change 1s infinite;
+				animation: color-change 3s infinite;
 			}
 			@keyframes color-change {
 				0% { color: red; }
-  				50% { color: blue; }
+  				30% { color: green; }
+				60% { color: blue; }
   				100% { color: red; }
 			}
 
 			.createrInfo{
 				text-align: center;
-				font-size: 3vmin;
+				font-size: 2vmin;
 			}
 
 			.navFixed {
@@ -155,6 +178,15 @@
 				transition: opacity .5s ease-out;   
 			}
 
+			@media (max-width: 768px) {
+				.infomation ul{
+					width: 80%;
+					font-size: 5vmin; 
+				}
+
+            }
+
+
 		</style>
 
 		
@@ -162,11 +194,12 @@
 	</head>
 
 	<body>
-		<header class="top">
+		<header id="top">
 			<h1>逢甲僑光學生套房出租</h1>
 		</header>
-		
-		<nav class = "menu">
+
+		<!--
+		<nav class = "menu">	
 			<div>
 				<ul>
 					<li>
@@ -185,23 +218,50 @@
 					</li>
 					
 				</ul>
-			</div>
+			</div>	
 		</nav>
+		-->
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container-fluid">
+			  <!--<a class="navbar-brand" href="#">Navbar</a>-->
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				  <li class="nav-item">
+					<a class="nav-link" href="homePage.html">首頁</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#top">套房資訊</a>
+				  </li>
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">環境預覽</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <li><a class="dropdown-item" href="#roomEnv">房間環境</a></li>
+					  <li><a class="dropdown-item" href="#pubEnv">公用設備</a></li>
+					  <li><a class="dropdown-item" href="#park">機車停車場</a></li>
+				  </li>
+				</ul>
+			  </div>
+			</div>
+		  </nav>
 
 		<main>
 			<!--介紹跑馬燈-->
 			<div class="marquee">
-				<div class="text">●鄰近逢甲大學、僑光科技大學 ●通勤便利，飲食多樣 ●環境清幽，採光佳 ●附有機車停車位及洗衣設備 ●租金平易近人</div>
+				<div class="text">1.鄰近逢甲大學、僑光科技大學 2.通勤便利，飲食多樣 3.環境清幽，採光佳 4.附有機車停車位及洗衣設備 5.租金平易近人</div>
 			</div>
 
 			<!--套房資訊-->
 			<div class="infomation">
-				<h2 id="info">套房資訊</h2>
+				<h2 id="info"><b>套房資訊</b></h2>
 				<ul>
 					<li>位置: 位於烈美街，西平公園對面巷子，巷口有美而美早餐店</li>
 					<li>房租: 22000~23000/半年(不含水電費)</li>
 					<li>房間坪數: 約4坪</li>
-					<li>房間設備: 冷氣、床、衣櫃、書桌、網路</li>
+					<li>房間設備: 冷氣、床、衣櫃、書桌、有線網路</li>
 					<li>公共設施: 洗衣機、晒衣場、飲水機、門禁管制</li>
 					<li>其他: 不可養寵物、室內禁菸、禁用瓦斯明火</li>
 					<li>連絡電話: 0965651460</li>
@@ -217,7 +277,7 @@
 			<!--套房環境-->
 			<div class="roomImage">
 				<div>
-					<h2 id="roomEnv">房間環境</h2>
+					<h2 id="roomEnv"><b>房間環境</b></h2>
 					<img src="3B-1.jpg" style="width:40%; height:40%;">
 					<img src="3B-3.jpg" style="width:40%; height:40%;">
 				</div>
@@ -226,12 +286,12 @@
 					<img src="5A-2.jpg" style="width:25%; height:25%;">
 				</div>
 				<div>
-					<h2 id="pubEnv">公用設備</h2>
+					<h2 id="pubEnv"><b>公用設備</b></h2>
 					<img src="P_20180413_144403.jpg" style="width:30%; height:30%;">
 					<img src="P_20180413_144538.jpg" style="width:30%; height:30%;">
 				</div>
 				<div>
-					<h2 id="park">機車停車場</h2>
+					<h2 id="park"><b>機車停車場</b></h2>
 					<img src="P_20180413_145423.jpg" style="width:50%; height:50%;">
 				</div>
 			</div>
@@ -251,9 +311,9 @@
 			$(function() {
 			  $(window).scroll(function() {
 				if ($(this).scrollTop() > 100)  {          /* 要滑動到選單的距離 */
-				   $('.menu').addClass('navFixed');   /* 幫選單加上固定效果 */
+				   $('.navbar').addClass('navFixed');   /* 幫選單加上固定效果 */
 				} else {
-				  $('.menu').removeClass('navFixed'); /* 移除選單固定效果 */
+				  $('.navbar').removeClass('navFixed'); /* 移除選單固定效果 */
 				}
 			  });
 			});
