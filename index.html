@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!--RWD setting--> 
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
 		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
 		<title>學生套房出租</title>
 		<style>
-			*{
-				margin: 0;
-				padding: 0;
-			}
 
 			html{
 				scroll-behavior: smooth;
@@ -21,7 +24,7 @@
 			}
 			h1 {
 				color: black;
-				font-size: 45px;
+				font-size: 6vmin;
 				font-weight: bolder;
 				padding: 1%;
 			}
@@ -33,49 +36,7 @@
 				transform: scale(1.05);
 			}
 	
-			/*
-			.menu{
-				background-color: rgb(0,255,255);
-				box-sizing: border-box; 
-				padding: 3px;
-				width: 100%; 
-			}
-			.menu ul li{
-				font-size: 25px;
-				padding: 8px 8px 4px 10px;
- 				list-style-type: none;
-				display: inline;
-			}
-			.menu ul li a{
-				color: rgb(0,0,204);
-				text-decoration:none;
-				font-weight : 900;				
-			}
-			.menu ul li:hover{
-				background-color: rgb(127, 255, 212);		
-			}
-			
-			.dropdown-content {
-				z-index: 2;
-				display: none;
-				position: absolute;
-				background-color: rgb(0,255,255);
-				min-width: 142px;
-				left: 202px;
-			}
-			.dropdown-content a {
-				font-size: 24px;
-				padding: 10px 10px;
-				text-decoration: none;
-				display: block;
-			}
-			.dropdown-content a:hover {
-				background-color: rgb(127, 255, 212)
-			}
-			.roomEnv:hover .dropdown-content {
-				display: block;
-			}
-			*/
+			/*導覽列*/
 			.dropdown-menu li:hover .sub-menu {
 				visibility: visible;
 			}
@@ -86,9 +47,9 @@
 				font-size: 2vmin;
 			}
 
-
+			/*跑馬燈*/
 			.marquee{
-				font-size: 40px;
+				font-size: 5vmin;
 				color: red;
 				margin: 2%;
 				overflow: hidden;
@@ -108,50 +69,37 @@
 				}
 			}
 
-			.introImage img{
-				position: relative;
-				left: 10%;
-				padding-left: 2%;
-				margin-top: 40px;
-				margin-bottom: 30px;
-			}
 
-			
-			.roomImage{
-				display: inline-block;
-				text-align: center;	
-				margin: 1%;
-			}
-			.roomImage img{
-				margin-top: 5px;
-				margin-right: 15px;
-				margin-bottom: 40px;
-			}
-
-
-			.infomation{
-				margin: 1%;
+			/*簡介文字*/
+			.infoTextContainer{
+				margin:auto;
+				width: 50%;
 				animation: runTop 2s ease;
 			}
 			@keyframes runTop {
 				0%{
-					transform:translateY(40%);
+					transform:translateY(30%);
 				}
 				100%{
 					transform:translateY(0%);
 				}
 			}
-			.infomation ul{
+			.infoTextContainer ul{
 				text-align-last: left;
-				width: 48%;
-				margin:auto;
-				font-size: 3.4vmin; /*28px*/
+				font-size: 3vmin;
 			}
+
+			
+			/*圖片*/
+			.imageContainer img{
+				margin: 5% auto;
+			}
+
 
 			.welcome p{
 				padding: 5%;
 				text-align: center;
-				font-size: 12vmin;
+				font-size: 10vmin;
 				font-weight: 600;
 				animation: color-change 3s infinite;
 			}
@@ -162,10 +110,12 @@
   				100% { color: red; }
 			}
 
+
 			.createrInfo{
 				text-align: center;
 				font-size: 2vmin;
 			}
+
 
 			.navFixed {
 				z-index: 10;          
@@ -178,49 +128,24 @@
 				transition: opacity .5s ease-out;   
 			}
 
+
 			@media (max-width: 768px) {
-				.infomation ul{
+				.infoTextContainer{
 					width: 80%;
-					font-size: 5vmin; 
 				}
+			}
 
-            }
-
+	
 
 		</style>
-
-		
-		
+	
 	</head>
+
 
 	<body>
 		<header id="top">
 			<h1>逢甲僑光學生套房出租</h1>
 		</header>
-
-		<!--
-		<nav class = "menu">	
-			<div>
-				<ul>
-					<li>
-						<a href="homePage.html">首頁</a>
-					</li>
-					<li>
-						<a href="#top">套房資訊</a>
-					</li>
-					<li class="roomEnv">
-						<a href="#">環境預覽▼</a>
-						<div class="dropdown-content">
-							<a href="#roomEnv">房間環境</a>
-							<a href="#pubEnv">公用設備</a>
-							<a href="#park">機車停車場</a>
-						</div>
-					</li>
-					
-				</ul>
-			</div>	
-		</nav>
-		-->
 
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container-fluid">
@@ -248,53 +173,81 @@
 			</div>
 		  </nav>
 
+
 		<main>
-			<!--介紹跑馬燈-->
+			<!--跑馬燈-->
 			<div class="marquee">
 				<div class="text">1.鄰近逢甲大學、僑光科技大學 2.通勤便利，飲食多樣 3.環境清幽，採光佳 4.附有機車停車位及洗衣設備 5.租金平易近人</div>
 			</div>
 
-			<!--套房資訊-->
-			<div class="infomation">
+			<!--資訊文字-->
+			<div class="infoTextContainer">
 				<h2 id="info"><b>套房資訊</b></h2>
-				<ul>
-					<li>位置: 位於烈美街，西平公園對面巷子，巷口有美而美早餐店</li>
-					<li>房租: 22000~23000/半年(不含水電費)</li>
-					<li>房間坪數: 約4坪</li>
-					<li>房間設備: 冷氣、床、衣櫃、書桌、有線網路</li>
-					<li>公共設施: 洗衣機、晒衣場、飲水機、門禁管制</li>
-					<li>其他: 不可養寵物、室內禁菸、禁用瓦斯明火</li>
-					<li>連絡電話: 0965651460</li>
-					<li>聯絡人: 廖太太</li>
-				</ul>
+				<div class="infoText">
+					<ul>
+						<li>位置: 位於烈美街，西平公園對面巷子，巷口有美而美早餐店</li>
+						<li>房租: 22000~23000/半年(不含水電費)</li>
+						<li>房間坪數: 約4坪</li>
+						<li>房間設備: 冷氣、床、衣櫃、書桌、有線網路</li>
+						<li>公共設施: 洗衣機、晒衣場、飲水機、門禁管制</li>
+						<li>其他: 不可養寵物、室內禁菸、禁用瓦斯明火</li>
+						<li>連絡電話: 0965651460</li>
+						<li>聯絡人: 廖太太</li>
+					</ul>
+				</div>
 			</div>
-
-			<div class="introImage">
-				<img src="P_20180413_145455.jpg" style="width:40%; height:40%;">
-				<img src="P_20180413_145313.jpg" style="width:25%; height:25%;">
-			</div>
-
-			<!--套房環境-->
-			<div class="roomImage">
-				<div>
+			
+			<!--圖片-->
+			<div class="imageContainer">
+				<div class="container">
+					<div class="row justify-content-aroundw">
+						<div class="col-12 col-lg-6">
+							<img src="P_20180413_145455.jpg" style="width:90%">
+						</div>
+						<div class="col-12 col-lg-6">
+							<img src="P_20180413_145313.jpg" style="width:70%">
+						</div>
+					</div>
+					
 					<h2 id="roomEnv"><b>房間環境</b></h2>
-					<img src="3B-1.jpg" style="width:40%; height:40%;">
-					<img src="3B-3.jpg" style="width:40%; height:40%;">
-				</div>
-				<div>
-					<img src="5A-1.jpg" style="width:40%; height:40%;">
-					<img src="5A-2.jpg" style="width:25%; height:25%;">
-				</div>
-				<div>
+					<div class="row justify-content-aroundw">
+						<div class="col-12 col-lg-6">
+							<img src="3B-1.jpg" style="width:90%">
+						</div>
+						<div class="col-12 col-lg-6">
+							<img src="3B-3.jpg" style="width:90%">
+						</div>
+					</div>
+	
+					<div class="row justify-content-aroundw">
+						<div class="col-12 col-lg-6">
+							<img src="5A-1.jpg" style="width:90%">
+						</div>
+						<div class="col-12 col-lg-6">
+							<img src="5A-2.jpg" style="width:70%">
+						</div>
+					</div>
+	
 					<h2 id="pubEnv"><b>公用設備</b></h2>
-					<img src="P_20180413_144403.jpg" style="width:30%; height:30%;">
-					<img src="P_20180413_144538.jpg" style="width:30%; height:30%;">
-				</div>
-				<div>
+					<div class="row justify-content-aroundw">
+						<div class="col-12 col-lg-6">
+							<img src="P_20180413_144403.jpg" style="width:70%">
+						</div>
+						<div class="col-12 col-lg-6">
+							<img src="P_20180413_144538.jpg" style="width:70%">
+						</div>
+					</div>
+	
 					<h2 id="park"><b>機車停車場</b></h2>
-					<img src="P_20180413_145423.jpg" style="width:50%; height:50%;">
+					<div class="row justify-content-aroundw">
+						<div class="col-12">
+							<img src="P_20180413_145423.jpg" style="width:90%">
+						</div>
+					</div>
+						
 				</div>
 			</div>
+			
 			
 			<div class="welcome">
 				<p>~~歡迎來電洽訊~~</p>

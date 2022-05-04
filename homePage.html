@@ -7,7 +7,6 @@
  
          <!--RWD setting--> 
          <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    
          <!-- Bootstrap CSS -->
          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
    
@@ -21,13 +20,14 @@
 
             .quoteContainer{
                 z-index: 1;
+                max-width: 80%;
                 position: absolute;
                 top: 25%;
                 left: 20%;
             }
 
             .ml12 {
-                max-width: 100%;
+                width: 100%;
                 color:orange;
                 font-weight:700;
                 font-size: 12vmin;
@@ -44,6 +44,7 @@
            
             .buttonContainer{
                 z-index: 1;
+                max-width:50%;
                 position: absolute;
                 left: 46%;
                 top: 60%; 
@@ -53,6 +54,7 @@
                 0% {opacity: 0;}
                 100% {opacity: 1;}
             }
+
             .button {
                 display: inline-block;
                 text-align: center;
@@ -100,14 +102,8 @@
                 background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAACGklEQVRIia2WP2sbQRDFf3NS4SqkSO8Potxhu5PcGEyaOMghuBAGEzWSOhm7s65RF5mYFCJWEwxqLLuSjc76GC7cG9IFQaSbFHcnK5uTTn/y4GAYZt/svJvdWWEC7W7fBYpAmtUxBOomURF4AHrAaMUEm0DRTJAG7na2MqcrktPu9gE24qRILULUf7qsAieTvsz6nkS2FbNmWWmOgXvTGZdgKWTW906BO9M/VaKal10TxAXyob+pqpWyc/MrLn6abVZwHO0iJC8A7fAriMiPWm97zVgzmmX/VYHRPR+Alqi/r5IC1APORfSq5mV3y/bNgDmQDqU4Az4Cr8yAEVCxrwEuXC/nA18Fuar1su9CuWZKlA7JD4EW8Gjw+yLWG+AZoGR3vrlezgK+iMgZcMQcEuWBli/sV952Ekv21b+wxLIJJDxKih//5JTvJ5JPwWyJgCZwqGLherlHI+C3QqNsd57HOxLrAHgPNEJXokSV0JEHXhu7a6r6Y3LXy30CzoFbfVk3E+mS3RkAn8NvDNfL/YzKcL1tQA9eyHWyTRMlGqPd7VeB3s5W5h74DhRULEAhkOVWVXbLTmfyDMx/0AhuxeDSUi0hAkG3ADRQKmXneq4DFmHq5Co5NwOCNkxqxYXuomUwAug/XZ4Ajun/H7M3QjXOuXKCcA7Ejdh/u4jgJbAZztMUQZmRrovaDjA0E9QJXhYbi9URiyFQ/wPl/7IpTZqYzgAAAABJRU5ErkJggg==") no-repeat left center transparent;
                 background-size: 100% 100%;
             }
-            /*
-                .buttonContainer button{
-                padding: 8px;
-                font-size: 4vmin;
-                font-weight: 600;
-            }
-            */
 
+            
             .imgContainer{
                 z-index: 2;
             }
@@ -148,7 +144,6 @@
 
 
         <div class="quoteContainer">
-            <!--<h1 class="quote ">逢甲僑光學生套房出租</h1>-->
             <h1 class="ml12">逢甲僑光學生套房出租</h1>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
         </div>
@@ -156,7 +151,6 @@
         <!-- button By bootstrap -->
         <div class='buttonContainer'>
             <a class="button" href="index.html">進入</a>
-           <!-- <button type="button" class="btn btn-primary btn-lg " onclick="location.href='index.html'">前往頁面</button>-->
         </div>
 
         <!-- 幻燈片 By bootstrap -->
