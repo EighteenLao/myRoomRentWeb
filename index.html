@@ -80,7 +80,7 @@
 			}
 			@keyframes runTop {
 				0%{
-					transform:translateY(30%);
+					transform:translateY(40%);
 				}
 				100%{
 					transform:translateY(0%);
@@ -110,7 +110,9 @@
 
 			/*圖片*/
 			.imageContainer img{
-				margin: 5% auto;
+				display: block;
+    			margin: 5% auto;
+
 			}
 
 
@@ -230,41 +232,51 @@
 			<!--圖片-->
 			<div class="imageContainer">
 				<div class="container">
-					<h2 id="roomEnv"><b>房間環境</b></h2>
+					
 					<div class="row">
+						<h2 id="roomEnv"><b>房間環境</b></h2>
 						<div class="col-12 col-lg-6">
 							<img src="Image\room\3B-1.jpg" style="width:100%">
 						</div>
 						<div class="col-12 col-lg-6">
-							<img src="Image\room\5A-1.JPG" style="width:80%">
+							<img src="Image\room\5A-1.JPG" style="width:90%">
 						</div>
-					</div>
-	
-					<div class="row">
+
+						 <!-- Force next columns to break to new line -->
+   						<div class="w-100"></div>
+
 						<div class="col-12 col-lg-6">
-							<img src="Image\room\4B-2.JPG" style="width:80%">
-						</div>
-						<div class="col-12 col-lg-6">
-							<img src="Image\room\5A-2.JPG" style="width:80%">
-						</div>
-					</div>
-	
-					<h2 id="pubEnv"><b>公用設備</b></h2>
-					<div class="row">
-						<div class="col-12 col-lg-6">
-							<img src="Image\equipment\P_20180413_144403.jpg" style="width:80%">
+							<img src="Image\room\4B-2.JPG" style="width:70%">
 						</div>
 						<div class="col-12 col-lg-6">
-							<img src="Image\equipment\P_20180413_144538.jpg" style="width:80%">
+							<img src="Image\room\5A-2.JPG" style="width:70%">
 						</div>
-					</div>
-	
-					<h2 id="park"><b>機車停車場</b></h2>
-					<div class="row">
+
+						<!-- Force next columns to break to new line -->
+						<div class="w-100"></div>
+
+						<h2 id="pubEnv"><b>公用設備</b></h2>
+						<div class="col-12 col-lg-6">
+							<img src="Image\equipment\P_20180413_144403.jpg" style="width:70%">
+						</div>
+						<div class="col-12 col-lg-6">
+							<img src="Image\equipment\P_20180413_144538.jpg" style="width:70%">
+						</div>
+
+						<!-- Force next columns to break to new line -->
+						<div class="w-100"></div>
+
+						<h2 id="park"><b>機車停車場</b></h2>
 						<div class="col-md-6 offset-md-3">
 							<img src="Image\equipment\P_20180413_145423.jpg" style="width:100%">
 						</div>
+
 					</div>
+	
+					
+
+	
+					
 						
 				</div>
 			</div>
