@@ -33,7 +33,7 @@
 				font-size: 35px;
 			}
 			img:hover{
-				transform: scale(1.05);
+				transform: scale(1.1);
 			}
 	
 			/*導覽列*/
@@ -112,10 +112,20 @@
 			.imageContainer img{
 				display: block;
     			margin: 5% auto;
-
+				transition: all 0.4s;
 			}
 
+			.image{
+				opacity: 0; 
+				transform: translateY(30%);
+			}
 
+			.active{
+				opacity: 1;
+				transform: translateY(0%);
+			}
+
+			/*結尾*/
 			.welcome p{
 				padding: 5%;
 				text-align: center;
@@ -130,7 +140,7 @@
   				100% { color: red; }
 			}
 
-
+			/*copyright*/
 			.createrInfo{
 				text-align: center;
 				font-size: 2vmin;
@@ -236,20 +246,20 @@
 					<div class="row">
 						<h2 id="roomEnv"><b>房間環境</b></h2>
 						<div class="col-12 col-lg-6">
-							<img src="Image\room\3B-1.jpg" style="width:100%">
+							<img src="Image\room\3B-1.jpg" style="width:100%" class="image">
 						</div>
 						<div class="col-12 col-lg-6">
-							<img src="Image\room\5A-1.JPG" style="width:90%">
+							<img src="Image\room\5A-1.JPG" style="width:90%" class="image">
 						</div>
 
 						 <!-- Force next columns to break to new line -->
    						<div class="w-100"></div>
 
 						<div class="col-12 col-lg-6">
-							<img src="Image\room\4B-2.JPG" style="width:70%">
+							<img src="Image\room\4B-2.JPG" style="width:70%" class="image">
 						</div>
 						<div class="col-12 col-lg-6">
-							<img src="Image\room\5A-2.JPG" style="width:70%">
+							<img src="Image\room\5A-2.JPG" style="width:70%" class="image">
 						</div>
 
 						<!-- Force next columns to break to new line -->
@@ -257,10 +267,10 @@
 
 						<h2 id="pubEnv"><b>公用設備</b></h2>
 						<div class="col-12 col-lg-6">
-							<img src="Image\equipment\P_20180413_144403.jpg" style="width:70%">
+							<img src="Image\equipment\P_20180413_144403.jpg" style="width:70%" class="image">
 						</div>
 						<div class="col-12 col-lg-6">
-							<img src="Image\equipment\P_20180413_144538.jpg" style="width:70%">
+							<img src="Image\equipment\P_20180413_144538.jpg" style="width:70%" class="image">
 						</div>
 
 						<!-- Force next columns to break to new line -->
@@ -268,15 +278,10 @@
 
 						<h2 id="park"><b>機車停車場</b></h2>
 						<div class="col-md-6 offset-md-3">
-							<img src="Image\equipment\P_20180413_145423.jpg" style="width:100%">
+							<img src="Image\equipment\P_20180413_145423.jpg" style="width:100%" class="image">
 						</div>
 
-					</div>
-	
-					
-
-	
-					
+					</div>		
 						
 				</div>
 			</div>
@@ -292,6 +297,7 @@
 		</footer>
 	
 		<script>
+	
 			$(function() {
 			  $(window).scroll(function() {
 				if ($(this).scrollTop() > 100)  {          /* 要滑動到選單的距離 */
@@ -299,8 +305,34 @@
 				} else {
 				  $('.navbar').removeClass('navFixed'); /* 移除選單固定效果 */
 				}
-			  });
+			 });
 			});
+			
+
+			const images = $("img");
+			function handleScroll() {
+				$.each(images, function (index, image) {
+					const imageMiddleOffset = image.offsetTop + image.height / 2;
+					const scrollAt = window.scrollY + window.innerHeight*1.2;
+					if (scrollAt > imageMiddleOffset) {
+						$(this).attr({ class: "active" });
+					}
+				});
+			}
+			//改善效能
+			function debounce (func, delay=250) {
+				let timer = null
+				return () => {
+					let context = this
+					let args = arguments
+					clearTimeout(timer)
+					timer = setTimeout(() => {
+						func.apply(context, args)
+					}, delay)
+				}
+			}
+			$(window).scroll(debounce(handleScroll));
+
 		</script> 
 
 	</body>
