@@ -1,0 +1,27 @@
+aside{
+    .endingContainer{
+        margin: 5% auto;
+
+        img{
+            display: block;
+            margin: auto;
+        }
+
+        .welcome{
+            padding: 1%;
+            text-align: center;
+            font-size: 8vmin;
+            font-weight: 600;
+            animation: color-change 3s infinite;
+        }
+    }
+
+    @keyframes color-change {
+        0% { color: red; }
+        30% { color: green; }
+        60% { color: blue; }
+        100% { color: red; }
+    }
+}
+
+

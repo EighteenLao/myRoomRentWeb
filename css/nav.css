@@ -1,0 +1,23 @@
+nav {
+  background-color: #d7d7d7;
+}
+
+nav .nav {
+  z-index: 2;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.navFixed {
+  background-color: #d7d7d7;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  min-width: 100%;
+  opacity: 0.94;
+  -webkit-transition: opacity .5s ease-out;
+  transition: opacity .5s ease-out;
+}

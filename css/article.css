@@ -1,0 +1,149 @@
+@charset "UTF-8";
+article .headerCarousel .carouselContainer img {
+  width: 100%;
+  height: 750px;
+}
+
+article .marqueeSection {
+  /*跑馬燈*/
+}
+
+article .marqueeSection .marquee {
+  font-size: 5vmin;
+  color: red;
+  margin: 2%;
+  overflow: hidden;
+}
+
+article .marqueeSection .text {
+  position: relative;
+  -webkit-transform: translateX(10%);
+          transform: translateX(10%);
+  white-space: nowrap;
+  /*強迫文字不換行*/
+  -webkit-animation: runRight linear 20s infinite;
+          animation: runRight linear 20s infinite;
+}
+
+@-webkit-keyframes runRight {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-160%);
+            transform: translateX(-160%);
+  }
+}
+
+@keyframes runRight {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-160%);
+            transform: translateX(-160%);
+  }
+}
+
+article .roomInfoSection {
+  /*簡介文字*/
+  /*地圖*/
+}
+
+article .roomInfoSection .infoTextContainer {
+  background-color: #bae9d9;
+  padding: 5%;
+  width: 100%;
+  -webkit-animation: runTop 2s ease;
+          animation: runTop 2s ease;
+}
+
+article .roomInfoSection .infoTextContainer h2 {
+  text-align: center;
+  margin: 2%;
+}
+
+article .roomInfoSection .infoTextContainer ul {
+  text-align-last: left;
+  font-size: 2.5vmin;
+}
+
+@-webkit-keyframes runTop {
+  0% {
+    -webkit-transform: translateX(-40%);
+            transform: translateX(-40%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes runTop {
+  0% {
+    -webkit-transform: translateX(-40%);
+            transform: translateX(-40%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+article .roomInfoSection .iframe-rwd {
+  position: relative;
+  padding-bottom: 60%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+article .roomInfoSection .iframe-rwd iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+article .roomImgSection .row {
+  margin: 4% 0;
+}
+
+article .roomImgSection .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80%;
+  height: 400px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+article .roomImgSection .title h1 {
+  font-size: 6vmin;
+  margin: 5%;
+}
+
+article .roomImgSection .title ul li {
+  font-size: 3vmin;
+}
+
+@media (max-width: 768px) {
+  article .headerCarousel .carouselContainer img {
+    height: 300px;
+  }
+  article .roomInfoSection .infoTextContainer ul {
+    font-size: 4vmin;
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <title>Loading</title>
+</head>
+<body>
+    <div class="loadingDiv" id="loading" style = "display: none">
+        <img src = "image/icon/ajax-loading-icon-2.jpg">
+    </div>
+</body>
+
+<script>
+
+   
+    
+    $.ajax({
+          beforeSend: function () {
+             //將div顯示
+             $('#loading').css("display", "");
+             
+          },
+          type: 'GET',
+          async: false,
+          url: 'homePage.html',
+          success: function (data) {
+            $("body").load("homePage.html");
+          },
+          complete: function () {
+              //再次隱藏
+              $('#loading').css("display", "none"); 
+              
+              //測試可利用setTimeout 讓loading效果明顯
+              //setTimeout(function () { $('#loading').css("display", "none"); }, 3000);
+              
+          }
+       
+    })
+</script>
+
+</html>
